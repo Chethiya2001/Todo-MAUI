@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace Todo_MAUI.ViewModel;
 
-public class MainViewModel : INotifyPropertyChanged
+public class MainViewModel : ObservableObject
 {
-    public event PropertyChangedEventHandler? PropertyChanged;
+    [ObservableProperty]
+    string text;
+   
 }
 

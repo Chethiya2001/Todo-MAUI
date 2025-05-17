@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Todo_MAUI.MainPage">
+             x:Class="Todo_MAUI.MainPage"
+             xmlns:viewmodel="clr-namespace:Todo_MAUI.ViewModel"
+             x:DataType="viewmodel:MainViewModel">
 
     <Grid RowDefinitions="100,Auto,*"
           ColumnDefinitions=".75*,.25*"
@@ -11,7 +13,7 @@
           >
         <Image Source="logo.png" Grid.ColumnSpan="4"  />
 
-        <Entry Grid.Row="1" Placeholder="Enter Todo" />
+        <Entry Grid.Row="1" Placeholder="Enter Todo" Text="{Binding Text}" />
         <Button Grid.Row="1" Grid.Column="1" Text="Add"/>
 
         <CollectionView Grid.Row="2" Grid.ColumnSpan="2">
