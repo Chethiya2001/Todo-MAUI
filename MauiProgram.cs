@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Todo_MAUI.ViewModel;
 
 namespace Todo_MAUI
 {
@@ -15,8 +16,11 @@ namespace Todo_MAUI
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainViewModel>();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

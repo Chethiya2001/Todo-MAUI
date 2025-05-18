@@ -1,12 +1,16 @@
-﻿namespace Todo_MAUI
+﻿using Todo_MAUI.ViewModel;
+
+namespace Todo_MAUI
 {
     public partial class MainPage : ContentPage
     {
        
 
-        public MainPage()
+        public MainPage(MainViewModel vm)
         {
             InitializeComponent();
+
+            BindingContext = vm;
         }
 
         
